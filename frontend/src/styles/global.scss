@@ -1,0 +1,282 @@
+/* Global Styles - TraceGrid Platinum V3.0 */
+
+:root {
+  --color-primary:        #0A2A1A;
+  --color-primary-light:  #1A7A4A;
+  --color-accent:         #C9A227;
+  --color-bg-base:        #F8F9FA;
+  --color-bg-card:        #FFFFFF;
+  --color-border:         #E5E7EB;
+  --color-text-primary:   #0D0F14;
+  --color-text-secondary: #4B5563;
+  --shadow-card:          0 8px 32px rgba(0, 0, 0, 0.04);
+  --shadow-modal:         0 24px 80px rgba(0, 0, 0, 0.12);
+  --radius-lg:            16px;
+  --radius-xl:            24px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', 'Outfit', 'PingFang SC', sans-serif;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app { height: 100%; }
+
+/* Scrollbar Style */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  &:hover { background: rgba(0,0,0,0.2); }
+}
+
+/* Element Plus Global Overrides */
+:root {
+  --el-color-primary: var(--color-primary);
+  --el-color-primary-light-3: var(--color-primary-light);
+  --el-color-primary-dark-2: var(--color-primary-dark);
+  --el-border-radius-base: 8px;
+}
+
+.el-button {
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &--primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #1A3D2D 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(10, 42, 26, 0.15);
+    &:hover { transform: translateY(-1.5px); box-shadow: 0 6px 20px rgba(10, 42, 26, 0.25); filter: brightness(1.1); }
+    &:active { transform: translateY(0); }
+  }
+
+  &.is-plain { border-width: 1.5px; }
+}
+
+.el-dialog {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  position: relative;
+
+  &::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  }
+
+  .el-dialog__header {
+    text-align: center;
+    padding: 40px 40px 20px;
+    margin-right: 0;
+    .el-dialog__title {
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -1px;
+      color: var(--color-primary);
+      position: relative;
+    }
+    .el-dialog__headerbtn { top: 32px; right: 32px; }
+  }
+
+  .el-dialog__body { padding: 8px 48px 32px; }
+
+  .el-dialog__footer {
+    padding: 24px 48px 40px;
+    border-top: none;
+    text-align: center;
+    .el-button { min-width: 110px; height: 44px; margin: 0 10px; }
+  }
+}
+
+/* 业务表单弹窗：恢复接近 Element Plus 默认的页头/页脚（避免居中标题与顶栏装饰条） */
+.el-dialog.prod-plain-dialog {
+  border-radius: var(--el-border-radius-base, 8px);
+  box-shadow: var(--el-box-shadow) !important;
+  background: var(--el-bg-color);
+  backdrop-filter: none;
+  border: 1px solid var(--el-border-color-lighter);
+
+  &::before {
+    display: none !important;
+  }
+
+  .el-dialog__header {
+    text-align: left !important;
+    padding: 14px 16px 12px !important;
+    margin-right: 0;
+    border-bottom: 1px solid var(--el-border-color-lighter);
+
+    .el-dialog__title {
+      font-weight: 600 !important;
+      font-size: 16px !important;
+      letter-spacing: normal !important;
+      color: var(--el-text-color-primary) !important;
+    }
+
+    .el-dialog__headerbtn {
+      top: 14px !important;
+      right: 12px !important;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 16px 16px 8px !important;
+  }
+
+  .el-dialog__footer {
+    padding: 10px 16px 14px !important;
+    border-top: 1px solid var(--el-border-color-lighter);
+    text-align: right !important;
+
+    .el-button {
+      min-width: auto !important;
+      height: auto !important;
+    }
+  }
+
+  .el-form-item__label {
+    margin-bottom: 0 !important;
+  }
+}
+
+.el-form-item {
+  margin-bottom: 24px;
+  .el-form-item__label {
+    font-weight: 600;
+    color: #64748B;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding: 0;
+  }
+}
+
+.el-input, .el-select {
+  --el-input-border-radius: 12px;
+  --el-input-hover-border-color: var(--color-primary);
+  --el-input-focus-border-color: var(--color-primary);
+  
+  .el-input__wrapper, .el-select__wrapper {
+    box-shadow: 0 0 0 1px #E5E7EB inset;
+    transition: all 0.2s ease;
+    padding: 4px 16px;
+    background: #FAFAFA;
+    &:hover { box-shadow: 0 0 0 1px var(--color-primary) inset; background: #fff; }
+    &.is-focus { box-shadow: 0 0 0 2px var(--color-primary) inset !important; background: #fff; }
+  }
+  
+  input { font-size: 14px; font-weight: 500; }
+}
+
+.el-card {
+  --el-card-border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.el-tabs {
+  --el-tabs-header-height: 56px;
+  .el-tabs__nav-wrap::after { background-color: #F1F3F5; height: 1px; }
+  .el-tabs__active-bar { background-color: var(--color-accent); height: 4px; border-radius: 4px; }
+  .el-tabs__item {
+    font-size: 15px;
+    font-weight: 600;
+    color: #94A3B8;
+    &.is-active { color: var(--color-primary); font-weight: 800; }
+  }
+}
+
+/* Layout Utilities */
+.page-container {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 32px;
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    color: var(--color-primary);
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(0,0,0,0.03);
+  overflow: hidden;
+
+  &-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #F1F5F9;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-primary);
+  }
+
+  &-body { padding: 24px; }
+}
+
+.search-bar {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* 数字化档案通用类 (Dossier View) */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.dossier-item {
+  padding: 16px;
+  border-radius: 12px;
+  background: #F8FAFC;
+  border: 1px solid #F1F5F9;
+  
+  .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 6px; }
+  .value { font-size: 15px; font-weight: 600; color: #1E293B; }
+}
+
+/* 图片预览：Teleport 到 body，避免父级 transform 导致闪烁 */
+.el-image-viewer__wrapper {
+  z-index: 4000 !important;
+}
+
+.el-image-viewer__mask {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.78) !important;
+}
+
+.el-image-viewer__canvas img {
+  max-width: min(96vw, 960px);
+  max-height: 88vh;
+}

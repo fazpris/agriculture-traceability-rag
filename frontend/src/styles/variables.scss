@@ -1,0 +1,87 @@
+// 设计Token - TraceGrid 铂金轻奢设计系统 (V3.0)
+
+// ==================== 色彩体系 ====================
+$color-primary:        #0A2A1A;    // 森林绿
+$color-primary-light:  #1A7A4A;
+$color-primary-dark:   #061A10;    // 深森林绿
+$color-accent:         #C9A227;    // 铂金金
+$color-accent-light:   #F9F4E1;
+$color-accent-dark:    #A6851D;    // 深倾向金
+$color-danger:         #A82B1B;
+$color-danger-light:   #FEE2E2;
+$color-warning:        #B45309;
+$color-warning-light:  #FEF3C7;
+$color-success:        #065F46;
+$color-success-light:  #D1FAE5;
+$color-info:           #1E293B;
+
+// 中性色
+$color-bg-base:        #F8F9FA;    // 象牙白
+$color-bg-card:        #FFFFFF;
+$color-bg-sidebar:     #0D0F14;    // 暗灰黑
+$color-border:         #E5E7EB;
+$color-border-light:   #F3F4F6;
+
+// 文字色
+$color-text-primary:   #0D0F14;    // 炭黑
+$color-text-secondary: #4B5563;    // 灰
+$color-text-disabled:  #9CA3AF;    // 浅灰
+$color-text-white:     #FFFFFF;
+
+// 阴影 (多层扩散阴影，模拟真实光线)
+$shadow-xs:     0 2px 4px rgba(0, 0, 0, 0.02);
+$shadow-sm:     0 4px 12px rgba(0, 0, 0, 0.04);
+$shadow-card:   0 8px 32px rgba(0, 0, 0, 0.06);
+$shadow-hover:  0 12px 48px rgba(0, 0, 0, 0.12);
+$shadow-modal:  0 24px 80px rgba(0, 0, 0, 0.16);
+
+// ==================== 字体 ====================
+$font-family: 'Inter', 'Outfit', 'PingFang SC', sans-serif;
+$font-mono:   'JetBrains Mono', monospace;
+
+$text-xs:    12px;
+$text-sm:    13px;
+$text-base:  14px;
+$text-md:    16px;
+$text-lg:    20px;
+$text-xl:    24px;
+$text-2xl:   32px;
+$text-3xl:   42px;
+
+$font-normal:   400;
+$font-medium:   500;
+$font-semibold: 600;
+$font-bold:     700;
+
+// ==================== 间距 ====================
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  20px;
+$space-6:  24px;
+$space-8:  32px;
+$space-10: 48px;
+$space-12: 64px;
+$space-14: 80px;
+$space-16: 96px;
+$space-20: 128px;
+
+// ==================== 圆角 ====================
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   16px;
+$radius-xl:   24px;
+$radius-2xl:  32px;
+$radius-3xl:  48px;
+$radius-full: 9999px;
+
+// ==================== 过渡 ====================
+$transition-fast:   all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-base:   all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow:   all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// ==================== 布局尺寸 ====================
+$sidebar-width:      240px;
+$topbar-height:      64px;
+$content-max-width:  1200px;
